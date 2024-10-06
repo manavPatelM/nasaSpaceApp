@@ -1,6 +1,6 @@
 
-import * as THREE from './node_modules/three';
-import { OrbitControls } from './node_modules/three/examples/jsm/controls/OrbitControls';
+import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+import { OrbitControls } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/jsm/controls/OrbitControls.js';
 
 // Set up scene, camera, and renderer
 let scene = new THREE.Scene();
@@ -19,7 +19,7 @@ pointLight.position.set(0, 0, 0); // Adjust the position to match the location o
 scene.add(pointLight);
 
 // Optional: You can also add a light helper to visualize the point light in your scene
-const lightHelper = new THREE.PointLightHelper(pointLight);
+const lightHelper = new PointLightHelper(pointLight);
 scene.add(lightHelper);
 
 renderer.shadowMap.enabled = true;
