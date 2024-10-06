@@ -1,5 +1,5 @@
 
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+import * as THREE from '<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.168.0/three.module.js" integrity="sha512-cV5o5uoKbUWe+4GaJ4Eu/oaZ4IJKh2OhShH7Gwub0OQ6oPgxQxXL++Ih6AJJk70O/JCBhf9nxAm+Hhsx1ddk1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>';
 import { OrbitControls } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/jsm/controls/OrbitControls.js';
 
 // Set up scene, camera, and renderer
