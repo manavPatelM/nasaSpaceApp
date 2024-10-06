@@ -83,7 +83,7 @@ document.body.appendChild(renderer.domElement);
 
 
 // Add OrbitControls for user interactivity
-let controls = new OrbitControls(camera, renderer.domElement);
+let controls = new THREE.OrbitControls(camera, renderer.domElement);
 camera.position.set(0, 50, 150); // Set initial camera position
 controls.update();
 
