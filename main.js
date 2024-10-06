@@ -19,7 +19,7 @@ pointLight.position.set(0, 0, 0); // Adjust the position to match the location o
 scene.add(pointLight);
 
 // Optional: You can also add a light helper to visualize the point light in your scene
-const lightHelper = new PointLightHelper(pointLight);
+const lightHelper = new THREE.PointLightHelper(pointLight);
 scene.add(lightHelper);
 
 renderer.shadowMap.enabled = true;
