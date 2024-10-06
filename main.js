@@ -1,7 +1,3 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import {calculatePositio} from '/Users/VFIN/Desktop/solarModel/calcPosition.js'
-
 
 // Set up scene, camera, and renderer
 let scene = new THREE.Scene();
