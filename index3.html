@@ -261,7 +261,7 @@ window.addEventListener('mousemove', (event) => {
 
 
 // Click event for showing information
-window.addEventListener('click', () => {
+window.addEventListener('pointerup', () => {
     raycaster.setFromCamera(mouse, camera);
     // Check if a planet is clicked
     let intersects = raycaster.intersectObjects(planetObjects.map(obj => obj.mesh));
