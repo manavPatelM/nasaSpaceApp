@@ -261,7 +261,7 @@ window.addEventListener('mousemove', (event) => {
 
 
 // Click event for showing information
-window.addEventListener('pointerup', () => {
+const clickOnPlanets = () => {
     raycaster.setFromCamera(mouse, camera);
     // Check if a planet is clicked
     let intersects = raycaster.intersectObjects(planetObjects.map(obj => obj.mesh));
@@ -279,7 +279,9 @@ window.addEventListener('pointerup', () => {
     else {
         infoBox.style.display = 'none'; // Hide info box if nothing is clicked
     }
-});
+}
+window.addEventListener('click', clickOnPlanets);
+window.addEventListener('touchend', clickOnPlanets);
 
 // Moon's data
 let moonData = {
