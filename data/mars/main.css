@@ -70,8 +70,8 @@ body {
     background-color: rgba(0, 0, 0, 0.85);
     padding: 10px;
     border-radius: 5px;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 2;
     font-size: 0.9rem;
@@ -79,17 +79,6 @@ body {
     text-align: left; /* Better readability */
 }
 
-/* Hover effect to show info */
-.info-container:hover .hover-info {
-    opacity: 1;
-    visibility: visible;
-}
-
-.info-container:hover {
-    transform: scale(1.05); /* Slightly increase the size */
-    box-shadow: 0px 8px 16px rgba(97, 86, 86, 0.652); /* Enhanced shadow on hover */
-    z-index: 2; /* Bring hovered container to the top */
-}
 
 /* Responsive typography */
 body, .info-container {
