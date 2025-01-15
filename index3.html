@@ -261,28 +261,39 @@ window.addEventListener('mousemove', (event) => {
 
 
 
-// Click event for showing information
-const clickOnPlanets = () => {
-    raycaster.setFromCamera(mouse, camera);
-    // Check if a planet is clicked
+const handlePointerEvent = (event) => {
+    let pointer = { x: 0, y: 0 };
+
+    if (event.type === 'touchstart' || event.type === 'touchend') {
+        const touch = event.changedTouches[0];
+        pointer.x = (touch.clientX / window.innerWidth) * 2 - 1;
+        pointer.y = -(touch.clientY / window.innerHeight) * 2 + 1;
+    } else {
+        pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+        pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    }
+
+    raycaster.setFromCamera(pointer, camera);
+
     let intersects = raycaster.intersectObjects(planetObjects.map(obj => obj.mesh));
     if (intersects.length > 0) {
         let intersectedObject = intersects[0].object;
         let planet = planetObjects.find(p => p.mesh === intersectedObject);
-        
-        // Render the planet's data page
-        // window.location.href = `./dataPages/${planet.data.name.toLowerCase()}.html`;
+
+        // Navigate to the planet's data page
         window.location.href = `./data/${planet.data.name.toLowerCase()}/main.html`;
 
-        return; // Exit the function to prevent further execution
+        return; // Exit the function
+    } else {
+        infoBox.style.display = 'none';
     }
-    // let intersects = raycaster.intersectObjects(planetObjects.map(obj => obj.mesh));
-    else {
-        infoBox.style.display = 'none'; // Hide info box if nothing is clicked
-    }
-}
-window.addEventListener('click', clickOnPlanets);
-window.addEventListener('touchend', clickOnPlanets);
+};
+
+// Add both touch and mouse event listeners
+window.addEventListener('click', handlePointerEvent);
+window.addEventListener('touchstart', handlePointerEvent);
+window.addEventListener('touchend', handlePointerEvent); // Optional, based on your interaction needs
+
 
 // Moon's data
 let moonData = {
